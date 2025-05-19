@@ -25,10 +25,10 @@ public class LoadBalancingProxyServer {
     static List<String> hostServers =new ArrayList<>();
     /* 
     Arrays.asList(
-        "142.1.46.98",  // dh2020pc29
-        "142.1.46.99",  // dh2020pc30 
-        "142.1.46.100", // dh2010pc31
-        "142.1.46.38"   // dh2020pc04
+        "142.1.46.98", 
+        "142.1.46.99", 
+        "142.1.46.100", 
+        "142.1.46.38"   
     );
     */
 
