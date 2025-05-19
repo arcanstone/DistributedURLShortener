@@ -6,7 +6,7 @@ This is a distributed URL shortener system implemented in Java. It consists of m
 
 ## Components
 
-### 1. `serverSqlite/` - URL Shortener Server
+### 1. serverSqlite/ - URL Shortener Server
 
 * A lightweight HTTP server that:
 
@@ -22,7 +22,7 @@ This is a distributed URL shortener system implemented in Java. It consists of m
   * `runit.bash`: Script to run the server
   * `reset.bash`: Resets the database
 
-### 2. `proxyServer/` - Load Balancing Proxy Server
+### 2. proxyServer/ - Load Balancing Proxy Server
 
 * Sits in front of all `serverSqlite` instances and:
 
@@ -36,7 +36,7 @@ This is a distributed URL shortener system implemented in Java. It consists of m
   * `host_servers.txt`: List of backend server addresses
   * `thread_pool_size.txt`: Configures thread pool size for concurrency
 
-### 3. `LoadTest/` - Load Testing Suite
+### 3. LoadTest/ - Load Testing Suite
 
 * Simulates concurrent users to evaluate server performance
 * Key Files:
