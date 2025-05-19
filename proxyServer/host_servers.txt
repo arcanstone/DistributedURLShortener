@@ -1,3 +1,4 @@
+#Example ips for servers, remove this line once you've added them.
 142.1.46.98 
 142.1.46.99
 142.1.46.100
