@@ -124,9 +124,15 @@ cd ../LoadTest
 
 ---
 
+## Architecture
+
+For detailed information on the system design, consistency, replication, caching, and scalability, see: [architecture](https://github.com/arcanstone/DistributedURLShortener/blob/main/ARCHITECTURE.md)
+
+---
+
 ## Notes
 
 * System does not use Docker or container orchestration.
 * Failover is manually configured based on health checks and host list.
 * SQLite makes it easy to replicate state but is not ideal for massive scalability.
-* his application runs locally on your machine and is not deployed. You can interact with the interface via your browser at: http://localhost:8087
+* his application runs locally on your machine and is not deployed.
