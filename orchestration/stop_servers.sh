@@ -3,7 +3,7 @@
 
 
 # Path to the file containing the server names/IP addresses
-servers_file="/student/henriq93/Documents/409assign/a1group92/a1/proxyServer/host_servers.txt"
+servers_file=
 
 # Read server IP addresses from the file into an array
 mapfile -t servers < "$servers_file"  # Reads lines from the file into an array
