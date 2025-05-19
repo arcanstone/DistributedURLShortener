@@ -79,7 +79,7 @@ cd ../proxyServer
 ./start_servers.sh
 ```
 
-This will start the SQLite-based URL shortener servers as described in `host_servers.txt`.
+This will start the SQLite-based URL shortener servers as described in `host_servers.txt`. You will also need to modify `start_servers` and `stop_servers` accordingly
 
 #### 3. Run the Proxy Server
 
