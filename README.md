@@ -87,6 +87,24 @@ This will start the SQLite-based URL shortener servers as described in `host_ser
 java LoadBalancingProxyServer
 ```
 
+This project is **not deployed online** and is only accessible **locally** on your machine.
+
+Then open [`http://localhost:8087`](http://localhost:8087) in your browser to use the URL shortener interface.
+Once you've created a short URL, you can access it by navigating to:
+
+```
+http://localhost:8087/abc123
+```
+
+where `abc123` is your generated short code.
+
+> Note: This address will only work **while the server is running** and **only on the machine it's running on**.
+
+You can also shorten your URL via curl using 
+```bash
+curl -X PUT "http://localhost:8087/?short=abc123&long=https://example.com"
+```
+
 #### 4. Run Load Tests (optional)
 
 ```bash
@@ -111,3 +129,4 @@ cd ../LoadTest
 * System does not use Docker or container orchestration.
 * Failover is manually configured based on health checks and host list.
 * SQLite makes it easy to replicate state but is not ideal for massive scalability.
+* his application runs locally on your machine and is not deployed. You can interact with the interface via your browser at: http://localhost:8087
