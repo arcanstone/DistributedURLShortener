@@ -4,7 +4,7 @@
 servers_file="host_servers.txt"
 
 # Path to the serverSqlite directory on the remote servers
-script_dir="/student/henriq93/Documents/409assign/a1group92/a1/serverSqlite"
+script_dir=
 
 # Read server IP addresses from the file into an array
 mapfile -t servers < "$servers_file"  # Reads lines from the file into an array
