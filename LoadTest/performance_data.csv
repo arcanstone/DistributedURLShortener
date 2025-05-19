@@ -1,0 +1,9 @@
+TestID,RequestType,ResponseTime(ms)
+Load1-Test1,PUT,3523
+Load1-Test2,PUT,3105
+Load1-Test3,PUT,2989
+Load1-Test4,PUT,2866
+Load2-Test1,GET,3112
+Load2-Test2,GET,3096
+Load2-Test3,GET,3165
+Load2-Test4,GET,3182
