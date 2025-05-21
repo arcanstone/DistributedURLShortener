@@ -29,10 +29,6 @@ The system consists of:
 * Proxy server is essential to route and monitor requests.
 * Each short URL is stored on **two nodes** for redundancy.
 
-## Partition Tolerance
-
-* No inter-node communication. All communication is from the proxy to database nodes.
-
 ---
 
 ## Data Partitioning & Replication
