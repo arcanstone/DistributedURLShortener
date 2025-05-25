@@ -14,18 +14,8 @@ A high-performance, fault-tolerant distributed URL shortening service built with
 
 ## Architecture Overview
 
-```
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   Client Apps   │───▶│  Load Balancer   │───▶│  Storage Nodes  │
-│                 │    │   + Cache Layer  │    │   (Replicated)  │
-└─────────────────┘    └──────────────────┘    └─────────────────┘
-                              │
-                              ▼
-                    ┌──────────────────┐
-                    │ Health Monitor   │
-                    │ + Auto Recovery  │
-                    └──────────────────┘
-```
+![image](https://github.com/user-attachments/assets/b7bd0c58-643a-4b2d-a59c-00b3c2d1e835)
+
 
 ### Core Components
 
