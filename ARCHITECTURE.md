@@ -21,34 +21,11 @@ This document provides a comprehensive technical overview of the distributed URL
 
 ### High-Level Architecture
 
-```
-                    ┌─────────────────────────────────────┐
-                    │             CLIENT TIER             │
-                    │  Web Browsers │ Mobile Apps │ APIs  │
-                    └─────────────────┬───────────────────┘
-                                      │ HTTPS/HTTP
-                    ┌─────────────────▼───────────────────┐
-                    │          LOAD BALANCER              │
-                    │  ┌─────────────────────────────────┐ │
-                    │  │    Request Router & Cache       │ │
-                    │  │  ┌─────────────┐ ┌─────────────┐│ │
-                    │  │  │L1 Cache     │ │Rate Limiter ││ │
-                    │  │  │(In-Memory)  │ │& Auth       ││ │
-                    │  │  └─────────────┘ └─────────────┘│ │
-                    │  └─────────────────────────────────┘ │
-                    └─────────────────┬───────────────────┘
-                                      │ Consistent Hashing
-        ┌─────────────────────────────┼─────────────────────────────┐
-        │                             │                             │
-┌───────▼──────┐              ┌──────▼──────┐              ┌───────▼──────┐
-│ STORAGE NODE │              │ STORAGE NODE│              │ STORAGE NODE │
-│      A       │◄────────────►│      B      │◄────────────►│      C       │
-│              │  Replication │             │  Replication │              │
-│┌────┬────┬──┐│              │┌────┬────┬─┐│              │┌────┬────┬──┐│
-││API │Cache│DB││              ││API │Cache│DB│              ││API │Cache│DB││
-│└────┴────┴──┘│              │└────┴────┴─┘│              │└────┴────┴──┘│
-└───────────────┘              └─────────────┘              └──────────────┘
-```
+
+![image](https://github.com/user-attachments/assets/9d173d87-b983-4555-ada7-d860d72c0d34)
+
+
+
 
 ### Core Design Principles
 
@@ -96,30 +73,9 @@ Our system prioritizes **Availability** and **Partition Tolerance** while accept
 
 **Key Components:**
 
-```java
-┌─────────────────────────────────────┐
-│     LoadBalancingProxyServer        │
-├─────────────────────────────────────┤
-│ ┌─────────────────────────────────┐ │
-│ │        Request Router           │ │
-│ │  • Consistent Hashing Ring      │ │
-│ │  • Node Selection Algorithm     │ │
-│ │  • Failover Logic              │ │
-│ └─────────────────────────────────┘ │
-│ ┌─────────────────────────────────┐ │
-│ │         Cache Manager           │ │
-│ │  • LRU Eviction Policy         │ │
-│ │  • TTL Management              │ │
-│ │  • Cache Coherence             │ │
-│ └─────────────────────────────────┘ │
-│ ┌─────────────────────────────────┐ │
-│ │       Health Monitor            │ │
-│ │  • Periodic Health Checks      │ │
-│ │  • Node Status Tracking        │ │
-│ │  • Auto-recovery Triggers      │ │
-│ └─────────────────────────────────┘ │
-└─────────────────────────────────────┘
-```
+![image](https://github.com/user-attachments/assets/484522c5-6308-4fa2-b44d-2d178007d1c9)
+
+
 
 **Performance Characteristics:**
 - Thread Pool: Configurable (default: 50 threads)
@@ -132,30 +88,8 @@ Our system prioritizes **Availability** and **Partition Tolerance** while accept
 
 **Architecture:**
 
-```java
-┌─────────────────────────────────────┐
-│           Storage Node              │
-├─────────────────────────────────────┤
-│ ┌─────────────────────────────────┐ │
-│ │         HTTP Server             │ │
-│ │  • Request Handler Pool         │ │
-│ │  • Connection Management        │ │
-│ │  • Protocol Processing         │ │
-│ └─────────────────────────────────┘ │
-│ ┌─────────────────────────────────┐ │
-│ │        Service Layer            │ │
-│ │  • URL Validation              │ │
-│ │  • Code Generation             │ │
-│ │  • Business Logic              │ │
-│ └─────────────────────────────────┘ │
-│ ┌─────────────────────────────────┐ │
-│ │      Persistence Layer          │ │
-│ │  • SQLite Database             │ │
-│ │  • Connection Pooling          │ │
-│ │  • Transaction Management      │ │
-│ └─────────────────────────────────┘ │
-└─────────────────────────────────────┘
-```
+![image](https://github.com/user-attachments/assets/fb5745c0-2137-40db-a478-451ea7c5999b)
+
 
 ---
 
