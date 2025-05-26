@@ -278,13 +278,7 @@ vim proxyServer/cache_config.properties
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Inspired by industry-standard URL shortening services
-- Built with performance and reliability as core principles
-- Designed for educational and production use cases
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/arcanstone/DistributedURLShortener/blob/main/LICENSE.md) file for details.
 
 ---
 
